@@ -39,13 +39,16 @@
     {
         "defaults": 
         {
+            "colorScheme": "Campbell",
             "font": 
             {
                 "face": "Cascadia Mono",
-                "size": 12
+                "size": 12,
+                "weight": "extra-bold"
             },
-            "opacity": 55,
-            "useAcrylic": true
+            "intenseTextStyle": "all",
+            "opacity": 0,
+            "useAcrylic": false
         },
         "list": 
         [
