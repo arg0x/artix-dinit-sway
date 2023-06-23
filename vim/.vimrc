@@ -1,5 +1,5 @@
 " Set compatibility Vim only
-" set nocompatible
+set nocompatible
 
 " Automatically wrap text that extends beyond the screen length
 set wrap
@@ -34,7 +34,7 @@ set matchpairs+=<:>
 " set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 " Set status line display
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
+" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
 
 " Highlight matching search patterns
 set hlsearch
@@ -56,3 +56,30 @@ vnoremap <Space> zf
 if filereadable(expand("~/.vimrc.plug"))
     source ~/.vimrc.plug
 endif
+
+" Term colors 
+if has('termguicolors')
+	set termguicolors
+else
+	set t_Co = 256
+endif
+
+" gruvbox-material dark hard
+set bg=dark
+let g:gruvbox_material_background = 'hard'
+
+" Enable gruvbox-material transparency
+" let g:gruvbox_material_transparent_background = 1
+
+" Disable italic comments
+let g:gruvbox_material_disable_italic_comment = 1
+
+" Enable bold
+let g:gruvbox_material_enable_bold = 1
+
+" Material style statusline
+let g:gruvbox_material_statusline_style = 'default' 
+
+" Set colorscheme
+colorscheme gruvbox-material
+
