@@ -35,6 +35,7 @@
   "profiles": {
     "defaults": {
       "colorScheme": "GruvboxMaterialHardDark",
+      "cursorShape": "filledBox",
       "experimental.retroTerminalEffect": false,
       "font": {
         "face": "Cascadia Mono",
@@ -138,7 +139,7 @@
       "brightRed": "#EA6962",
       "brightWhite": "#D4BE98",
       "brightYellow": "#D8A657",
-      "cursorColor": "#FFFFFF",
+      "cursorColor": "#D4BE98",
       "cyan": "#89B482",
       "foreground": "#D4BE98",
       "green": "#A9B665",
