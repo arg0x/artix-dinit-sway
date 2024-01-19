@@ -1,0 +1,12 @@
+window {
+  background-image: url("file:///usr/share/backgrounds/walls/9S.png");
+  background-position: center center;
+  background-size: cover;
+}
+
+box#body {
+  color: white;
+  background-color: rgba(50, 50, 50, 0.5);
+  border-radius: 10px;
+  padding: 50px;
+}
