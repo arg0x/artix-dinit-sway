@@ -1,0 +1,7 @@
+# nbfc_service
+type = scripted
+command = /usr/bin/nbfc start
+stop-command = /usr/bin/nbfc stop
+# restart = true
+# smooth-recovery = true
+waits-for = greetd
