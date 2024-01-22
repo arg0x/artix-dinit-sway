@@ -1,5 +1,5 @@
 ## greetd
-- move greetd folder to /etc/ 
+- greetd + gtkgreet 
 
 ```bash
 sudo useradd -M -G video greeter
