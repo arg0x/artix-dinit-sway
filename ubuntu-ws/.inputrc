@@ -1,6 +1,0 @@
-# vi editing mode
-set editing-mode vi
-# stop bell
-set bell-style none          
-# vi kemap
-set keymap vi

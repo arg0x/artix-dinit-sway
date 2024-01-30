@@ -1,2 +1,1 @@
-# dot
-dotfiles
+# artix-dinit-sway 
