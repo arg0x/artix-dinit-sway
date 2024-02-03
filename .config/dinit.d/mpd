@@ -1,0 +1,5 @@
+type=scripted
+command=mpd
+logfile=$HOME/log/mpd.log
+restart=true
+depends-on=pipewire

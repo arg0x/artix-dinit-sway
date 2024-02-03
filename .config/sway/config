@@ -1,15 +1,18 @@
-#
-# arg0x's sway config
-#
+#######################
+# arg0x's sway config #
+#######################
+
+# colors from pywal
+include "$HOME/.cache/wal/colors-sway"
 
 # Autotiling
 exec_always autotiling
 
-# Hide the damn title bar
-default_border pixel 1.5
-#default_floating_border none
+# Hide title bar
+default_border pixel 3
+default_floating_border pixel 3
 titlebar_padding 1
-titlebar_border_thickness 0
+titlebar_border_thickness 1
 
 # Using adobe-source-code-pro-fonts 
 font pango:SourceCodePro 12 
@@ -24,35 +27,43 @@ input "type:keyboard" xkb_options caps:swapescape
 # Disable Mouse Acclearation
 input "type:pointer" accel_profile flat
 
-### Variables
+
+#############
+# Variables #
+#############
+
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
-#set $left h
-#set $down j
-#set $up k
-#set $right l
+
 # Your preferred terminal emulator
 set $term alacritty
+
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu fuzzel
-# --show run
+set $menu fuzzel --show run
 
-### Output configuration
-#
+########################
+# Output configuration #
+########################
+
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/argo/Pictures/walls/2BWall.jpeg fill
-#
+# output * bg /home/argo/Pictures/walls/2BWall.jpeg fill
+
+# pywal set wall and color
+output * background $wallpaper fill
+client.focused $color0 $background $foreground $color7 $background
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-### Idle configuration
-#
+######################
+# Idle configuration #
+######################
+
 # Example configuration:
 #
 # exec swayidle -w \
@@ -65,7 +76,7 @@ output * bg /home/argo/Pictures/walls/2BWall.jpeg fill
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
+
 # Example configuration:
 #
 #   input "2:14:SynPS/2_Synaptics_TouchPad" {
@@ -78,8 +89,10 @@ output * bg /home/argo/Pictures/walls/2BWall.jpeg fill
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-### Key bindings
-#
+################
+# Key bindings #
+################
+
 # Basics:
 #
     # Start a terminal
@@ -103,33 +116,29 @@ output * bg /home/argo/Pictures/walls/2BWall.jpeg fill
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-#
-# Moving around:
-#
+
+#################
+# Moving around #
+#################
+
     # Move your focus around
-    #bindsym $mod+$left focus left
-    #bindsym $mod+$down focus down
-    #bindsym $mod+$up focus up
-    #bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
+    # Using $mod+[up|down|left|right]
     bindsym $mod+Left focus left
     bindsym $mod+Down focus down
     bindsym $mod+Up focus up
     bindsym $mod+Right focus right
 
     # Move the focused window with the same, but add Shift
-    #bindsym $mod+Shift+$left move left
-    #bindsym $mod+Shift+$down move down
-    #bindsym $mod+Shift+$up move up
-    #bindsym $mod+Shift+$right move right
     # Ditto, with arrow keys
     bindsym $mod+Shift+Left move left
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
-#
-# Workspaces:
-#
+
+#############
+# Workspaces#
+#############
+
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -154,9 +163,11 @@ output * bg /home/argo/Pictures/walls/2BWall.jpeg fill
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
-#
-# Layout stuff:
-#
+
+################
+# Layout stuff #
+################
+    
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
@@ -179,9 +190,14 @@ output * bg /home/argo/Pictures/walls/2BWall.jpeg fill
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
-#
-# Scratchpad:
-#
+
+    # Sticky Toggle
+    bindsym $mod+Shift+s sticky toggle
+
+##############
+# Scratchpad #
+##############
+
     # Sway has a "scratchpad", which is a bag of holding for windows.
     # You can send windows there and get them back later.
 
@@ -191,18 +207,16 @@ output * bg /home/argo/Pictures/walls/2BWall.jpeg fill
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
-#
-# Resizing containers:
-#
+
+#######################
+# Resizing containers #
+#######################
+
 mode "resize" {
     # left will shrink the containers width
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    #bindsym $left resize shrink width 10px
-    #bindsym $down resize grow height 10px
-    #bindsym $up resize shrink height 10px
-    #bindsym $right resize grow width 10px
 
     # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
@@ -214,57 +228,55 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
 bindsym $mod+r mode "resize"
 
 
-#
-# Experimental
-#
+####################
+# Custom app rules #
+####################
 
-# Custom Opacity / Transparency 
-for_window [app_id="Alacritty"] opacity 1
-for_window [class="discord"] opacity 0.90
-for_window [class="VSCodium"] opacity 1
+# for_window [app_id="Alacritty"] 
+# for_window [class="discord"] opacity 0.90
+# for_window [class="VSCodium"] opacity 0.90
 # for_window [app_id="fuzzel"] opacity 0.90
 
 
-#
-# Themes
-#
+##########
+# Themes #
+##########
 
-set $gnome-schema org.gnome.desktop.interface
-exec_always {
-    gsettings set $gnome-schema gtk-theme 'Gruvbox-Material-Dark-HIDPI'
-    gsettings set $gnome-schema icon-theme 'Gruvbox-Material-Dark'
-    gsettings set $gnome-schema cursor-theme 'Adwaita'
-   #gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-   #gsettings set $gnome-schema font-name 'Your font name'
-}
+# set $gnome-schema org.gnome.desktop.interface
+# exec_always {
+#     gsettings set $gnome-schema gtk-theme 'Gruvbox-Material-Dark'
+#     gsettings set $gnome-schema icon-theme 'Gruvbox-Material-Dark'
+#     gsettings set $gnome-schema cursor-theme 'Adwaita'
+#     #gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+#     #gsettings set $gnome-schema font-name 'SourceCodePro'
+# }
 
 # Colors
-client.focused "#ea6962" "#1d2021" "#ffffff" "#ea6962"
-client.unfocused "#ea6962" "#1d2021" "#ffffff" "#ea6962"
+# client.focused "#ea6962" "#1d2021" "#ffffff" "#ea6962"
+# client.unfocused "#ea6962" "#1d2021" "#ffffff" "#ea6962"
 
 # swaylock-effects
 bindsym $mod+l exec swaylock
 
-#
-# Screenshot
-#
+##############
+# Screenshot #
+##############
+
 bindsym Print exec grim -g "$(slurp -o -r -c '#ff0000ff')" - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png
 
+######################
+# Custom keybindings #
+######################
 
 # Toggle Hide
 bindsym $mod+m bar mode toggle
 
-
-#
-# Custom keybindings
-# 
-
 # Using brightnessctl 
 # Set Root permission first: sudo chmod +s $(which brightnessctl)
-
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
 
@@ -284,9 +296,10 @@ bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
 
-#
-# Status Bar:
-#
+##############
+# Status Bar #
+##############
+
 # Read `man 5 sway-bar` for more information about this section.
 # When the status_command prints a new line to stdout, swaybar updates.
 # The default just shows the current date and time.
