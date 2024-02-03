@@ -74,6 +74,9 @@ unset color_prompt force_color_prompt
 #     ;;
 # esac
 
+ # restore wpg colorscheme
+ (cat $HOME/.config/wpg/sequences &)
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
