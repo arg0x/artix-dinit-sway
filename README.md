@@ -1,5 +1,7 @@
 # artix-dinit-sway dotfiles (WIP)
 
+![WIP](screenshots/WIP.png)
+
 ## Keybindings
 
 - `MOD+[num]` -> Switch Workspace number
@@ -25,18 +27,24 @@ for x in $(< .pkglist-aur); do yay -S $x; done
 
 ## install dinit-uservervd
 
-- refer - https://github.com/Xynonners/dinit-userservd
+- Refer - https://github.com/Xynonners/dinit-userservd
 - do `makepkg -si`
 
 ## Setup snapshots using snapper and grub-btrfs
 
-- only for btrfs
-- follow - https://www.lorenzobettini.it/2023/03/snapper-and-grub-btrfs-in-arch-linux/
-- make sure to do `update-grub` to get Snapshot menu on grub
-- start btrfs-assistant by using `sudo -E btrfs-assistant-bin`
+- Only for btrfs
+- Follow - https://www.lorenzobettini.it/2023/03/snapper-and-grub-btrfs-in-arch-linux/
+- Make sure to do `update-grub` to get Snapshot menu on grub
+- Start btrfs-assistant by using `sudo -E btrfs-assistant-bin`
 
 ## Setup screen sharing
 
-- run [screensh](./.local/bin/screensh)
-- refer -https://www.reddit.com/r/swaywm/comments/l4e55v/guide_how_to_screenshare_from_chromiumfirefox/
+- Run [screensh](./.local/bin/screensh)
+- Refer - https://www.reddit.com/r/swaywm/comments/l4e55v/guide_how_to_screenshare_from_chromiumfirefox/
 - Todo make dinit user service
+
+## wpgtk
+
+- use linea-nord for gtk4 apps
+  - border glitch? toggle floating
+- qt5ct theme template - https://gist.github.com/niksingh710/0a5c7ec302b3a88b5d7fdcb1aa952a2c

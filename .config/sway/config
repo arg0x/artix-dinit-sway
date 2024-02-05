@@ -2,8 +2,9 @@
 # arg0x's sway config #
 #######################
 
-# colors from pywal
+# colors from wpgtk generate from wallpaper first
 include "$HOME/.cache/wal/colors-sway"
+include "$HOME/.config/colors/asuka-blue"
 
 # Autotiling
 exec_always autotiling
@@ -41,7 +42,8 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu fuzzel --show run
+set $menu fuzzel -b $fzbackground$80 -t $fzforeground$100 -s $fzcolor2$100 -S $fzforeground$100 -B 3 -C $color-4$80 -r 0
+#--show run --log-colorize=always
 
 ########################
 # Output configuration #
@@ -50,13 +52,14 @@ set $menu fuzzel --show run
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # output * bg /home/argo/Pictures/walls/2BWall.jpeg fill
 
+
 # pywal set wall and color
-output * background $wallpaper fill
-client.focused $color0 $background $foreground $color7 $background
+output * bg $wallpaper fill
+client.focused $color-4 $color-4 $foreground $color-4 $color-4
 
 # Example configuration:
 #
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+output eDP-1 mode 1920x1080@120.213Hz position 0,0 
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -66,10 +69,10 @@ client.focused $color0 $background $foreground $color7 $background
 
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
+#exec swayidle -w \
+#         timeout 300 'swaylock -f -c 000000' \
+#         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#         before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -246,14 +249,15 @@ bindsym $mod+r mode "resize"
 # Themes #
 ##########
 
-# set $gnome-schema org.gnome.desktop.interface
-# exec_always {
-#     gsettings set $gnome-schema gtk-theme 'Gruvbox-Material-Dark'
-#     gsettings set $gnome-schema icon-theme 'Gruvbox-Material-Dark'
-#     gsettings set $gnome-schema cursor-theme 'Adwaita'
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'linea-nord-color'
+    gsettings set $gnome-schema icon-theme 'Gruvbox-Material-Dark'
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
 #     #gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 #     #gsettings set $gnome-schema font-name 'SourceCodePro'
-# }
+
+}
 
 # Colors
 # client.focused "#ea6962" "#1d2021" "#ffffff" "#ea6962"
