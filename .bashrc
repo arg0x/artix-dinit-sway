@@ -65,6 +65,9 @@ else
 fi
 unset color_prompt force_color_prompt
 
+# restore wpg colorscheme
+(cat $HOME/.config/wpg/sequences &)
+
 # If this is an xterm set the title to user@host:dir
 # case "$TERM" in
 # xterm*|rxvt*)
