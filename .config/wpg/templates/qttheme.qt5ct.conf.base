@@ -1,0 +1,11 @@
+#               FG              BTN_BG bright less brdark        less da     txt fg               br text              btn fg           txt bg     bg     shadow   sel bg     sel fg     link       visited           alt bg default          tooltip bg  tooltip_fg
+[ColorScheme]
+  active_colors={foreground},          {background}, {background}, {background}, {background}, {background}, {color7},           {color7},           {foreground},           {color0}, {background}, {background}, {color1}, {color0}, {color1}, {foreground},            {background}, {foreground},           {background.strip},  {foreground}
+disabled_colors={inactive}, {background}, {background}, {background}, {background}, {background}, {inactive},  {inactive},  {inactive},  {color0}, {background}, {background}, {color1}, {color0}, {color1}, {inactive},   {background}, {inactive},  {background}, {inactive}
+inactive_colors={foreground},          {background}, {background}, {background}, {background}, {background}, {color7},           {color7},           {foreground},           {color0}, {background}, {background}, {color1}, {color0}, {color1}, {foreground},            {background}, {foreground},           {background}, {foreground}
+
+#               FG              BTN_BG     bright   less br  dark     less da  txt fg               br text  btn fg     txt bg     bg     shadow   sel bg     sel fg     link       visite alt bg default  tooltip bg  tooltip_fg
+#  active_colors={foreground},          {color2}, {background}, #cbc7c4, #9f9d9a, #b8b5b2, {color7},           #ff0000, {color7}, {color0}, {background}, #767472, {color1}, {color0}, {color1}, {foreground},            {background}, {foreground},           {background.strip}, {foreground}
+#disabled_colors={inactive}, {color2}, {background}, #cbc7c4, #9f9d9a, #b8b5b2, {inactive},  #ffec17, {color7}, {color0}, {background}, #767472, {color1}, {color0}, {color1}, {inactive},   {background}, {inactive},  {background}, {inactive}
+#inactive_colors={foreground},          {color2}, {background}, #cbc7c4, #9f9d9a, #b8b5b2, {color7},           #ff9040, {color7}, {color0}, {background}, #767472, {color1}, {color0}, {color1}, {foreground},            {background}, {foreground},           {background}, {foreground}
+
