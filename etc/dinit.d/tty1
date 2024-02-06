@@ -1,5 +1,5 @@
 type            = process
-command         = /usr/lib/dinit/agetty-default tty1
+command         = /usr/lib/dinit/agetty-default -a argo tty1
 restart         = true
 depends-on      = loginready
 termsignal      = HUP
