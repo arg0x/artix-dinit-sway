@@ -2,9 +2,9 @@
 # arg0x's sway config #
 #######################
 
-# colors from wpgtk generate from wallpaper first
+# colors from pywal
 include "$HOME/.cache/wal/colors-sway"
-include "$HOME/.config/colors/asuka-blue"
+include "$HOME/.config/colors/fuzzel-transparency"
 
 # Autotiling
 exec_always autotiling
@@ -42,7 +42,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu fuzzel -b $fzbackground$80 -t $fzforeground$100 -s $fzcolor2$100 -S $fzforeground$100 -B 3 -C $color-4$80 -r 0
+set $menu fuzzel -b $background$80 -t $foreground$100 -s $color2$100 -S $foreground$100 -B 3 -C $color3$80 -r 0
 #--show run --log-colorize=always
 
 ########################
@@ -55,7 +55,7 @@ set $menu fuzzel -b $fzbackground$80 -t $fzforeground$100 -s $fzcolor2$100 -S $f
 
 # pywal set wall and color
 output * bg $wallpaper fill
-client.focused $color-4 $color-4 $foreground $color-4 $color-4
+client.focused $color3 $color3 $foreground $color3 $color3
 
 # Example configuration:
 #

@@ -21,8 +21,8 @@ window#waybar {
 }
 
 #custom-scratch {
-  /* background-color: @color3; */
-  background-color: #ae3433;
+  background-color: @color3;
+  /* background-color: #ae3433; */
   color: #ffffff;
   padding: 0px 11px 0px 11px;
 }
@@ -87,9 +87,9 @@ window#waybar.empty {
 }
 
 #battery.critical {
-  color: #ae3433;
+  color: @color3;
 }
 
 #network.disconnected {
-  color: #ae3433;
+  color: @color3;
 }
