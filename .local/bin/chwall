@@ -1,0 +1,77 @@
+#!/bin/bash
+
+# Directory containing wallpapers
+directory="$HOME/.config/wpg/wallpapers"
+
+# File to store the index of the wallpaper
+index_file="$HOME/.config/.chwall"
+
+# Check if the directory exists and is accessible
+if [ ! -d "$directory" ]; then
+    echo "Error: Invalid directory path or directory does not exist."
+    exit 1
+fi
+
+# Check if the index file exists, if not create one with index 0
+if [ ! -f "$index_file" ]; then
+    echo "0" > "$index_file"
+fi
+
+# Read the current index from the index file
+current_index=$(cat "$index_file")
+
+# List all files in the directory and store them in an array
+files=("$directory"/*)
+
+# Function to display the current selected file
+show_selected_file() {
+    echo "Selected file: ${files[current_index]}"
+}
+
+# Main script
+# Check if any argument is provided
+if [ $# -ne 0 ]; then
+    case $1 in
+        next | n)
+            ((current_index++))
+            ;;
+        prev | p)
+            ((current_index--))
+            if [ "$current_index" -lt 0 ]; then
+                current_index=$(( ${#files[@]} - 1 ))
+            fi
+            ;;
+        *)
+            echo -e "Usage:\n chwall        - Initialize or set wallpaper\n chwall [n]ext - Next wallpaper\n chwall [p]rev - Previous wallpaper\n\nStatus:\n Wallpaper dir		: $directory \n Index dir		: $index_file \n Current index		: $current_index \n Current wallpaper	: ${files[current_index]}"
+            exit 1
+            ;;
+    esac
+fi
+
+# Adjust current index to handle wrap-around
+current_index=$((current_index % ${#files[@]}))
+
+# Update the index file with the new index
+echo "$current_index" > "$index_file"
+
+# Display the selected file
+show_selected_file
+
+# Select and set the image to wpg
+selected_file="${files[current_index]}"
+wpg -s "$selected_file"
+
+# Fuzzel rejects color code with '#' prefix
+# Iterate and Remove '#'
+input="$HOME/.cache/wal/colors-sway"
+
+while read -r line;
+do
+	echo "$line" | tr -d "#"
+done < "$input" >> colors-sway-tmp
+
+# Move and Replace the modified color code
+mv colors-sway-tmp $HOME/.cache/wal/colors-sway
+
+# Reload sway so we can use Fuzzel :)
+swaymsg reload
