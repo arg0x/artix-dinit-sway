@@ -12,8 +12,8 @@
     "clock"
   ],
   "modules-right": [
-    "pulseaudio",
     "network",
+    "pulseaudio",
     "temperature",
     "backlight",
     "battery",
@@ -65,16 +65,17 @@
     "interval": 30
   },
   "network": {
-    "format-wifi": "|    {essid} {signalStrength}% |",
-    "format-ethernet": "|   {ipaddr}/{cidr} |",
-    "tooltip-format": "  {ifname} via {gwaddr}",
-    "format-linked": "  {ifname} (No IP)",
+    "interval": 1,
+    "format-wifi": "|   {bandwidthDownBits}    {bandwidthUpBits} |    {essid} {signalStrength}%",
+    "format-ethernet": "|   {ipaddr}/{cidr} ",
+    "tooltip-format": "|   {ifname} via {gwaddr} ",
+    "format-linked": "|   {ifname} (No IP) ",
     "format-disconnected": "| ⚠ Offline |",
-    "format-alt": "| {ifname}: {ipaddr}/{cidr} |"
+    "format-alt": "| {ifname}: {ipaddr}/{cidr}"
   },
   "temperature": {
     "critical-threshold": 80,
-    "format": "{icon} {temperatureC}°C |",
+    "format": "{icon} {temperatureC}°C",
     "format-icons": [
       "",
       "",
@@ -103,11 +104,11 @@
     ]
   },
   "pulseaudio": {
-    "format": "| {icon}  {volume}% | {format_source}",
-    "format-bluetooth": "{volume}%  {icon}  {format_source}",
-    "format-bluetooth-muted": " {icon}  {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": " {volume}%",
+    "format": "| {icon}  {volume}% {format_source}| ",
+    "format-bluetooth": "| {volume}%  {icon}  {format_source}|",
+    "format-bluetooth-muted": "|  {icon}  {format_source}|",
+    "format-muted": "|  {volume}% {format_source}| ",
+    "format-source": "   {volume}% ",
     "format-source-muted": "",
     "format-icons": {
       "headphone": "",

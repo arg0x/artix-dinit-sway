@@ -5,7 +5,7 @@ window {
 }
 
 button {
-  color: @color4;
+  color: @foreground;
   background-color: @background;
   background-repeat: no-repeat;
   background-position: center;
