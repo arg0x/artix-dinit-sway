@@ -1,0 +1,44 @@
+@import "../../.cache/wal/colors-waybar.css";
+
+window {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+button {
+  color: @color4;
+  background-color: @background;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
+}
+
+button:focus,
+button:active,
+button:hover {
+  background-color: @color3;
+  outline-style: none;
+}
+
+#lock {
+  background-image: image(url("./icons/lock.png"));
+}
+
+#logout {
+  background-image: image(url("./icons/logout.png"));
+}
+
+#suspend {
+  background-image: image(url("./icons/suspend.png"));
+}
+
+#hibernate {
+  background-image: image(url("./icons/hibernate.png"));
+}
+
+#shutdown {
+  background-image: image(url("./icons/shutdown.png"));
+}
+
+#reboot {
+  background-image: image(url("./icons/reboot.png"));
+}
