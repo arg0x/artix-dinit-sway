@@ -1,0 +1,18 @@
+ignore-empty-password
+
+show-failed-attempts
+scaling=fill
+
+clock
+timestr=%R
+datestr=%a, %e of %B
+
+effect-blur=20x3
+# effect-greyscale,
+# effect-scale=100
+
+indicator
+indicator-caps-lock
+indicator-radius=200
+# indicator-thickness=20
+

@@ -264,13 +264,14 @@ exec_always {
 # client.unfocused "#ea6962" "#1d2021" "#ffffff" "#ea6962"
 
 # swaylock-effects
-bindsym $mod+l exec swaylock
+bindsym $mod+l exec swaylock -i $wallpaper --inside-clear-color $color6 --inside-ver-color $color2 --inside-wrong-color $color11 --key-hl-color $color2  --ring-color $background --ring-clear-color $background --ring-caps-lock-color $foreground --ring-ver-color $background --text-color $foreground --text-clear-color $background --text-caps-lock-color $foreground --bs-hl-color $color11 --caps-lock-bs-hl-color $color11 --caps-lock-key-hl-color $color10 --ring-wrong-color $color9
 
 ##############
 # Screenshot #
 ##############
 
 bindsym Print exec grim -g "$(slurp -o -r -c '#ff0000ff')" - | satty --filename - --fullscreen --output-filename ~/Pictures/Screenshots/satty-$(date '+%Y%m%d-%H:%M:%S').png
+
 
 ######################
 # Custom keybindings #
