@@ -1,5 +1,6 @@
 autotiling
 btrfs-assistant
+cava
 dinit-userservd
 dxvk-bin
 gruvbox-material-gtk-theme-git
@@ -13,7 +14,9 @@ satty-bin
 snapper-support
 spotify
 swaylock-effects
+vencord-installer-cli-bin
 vscodium-bin
+wlogout
 wpgtk
 yay
 ymuse
