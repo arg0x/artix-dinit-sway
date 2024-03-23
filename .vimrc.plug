@@ -9,4 +9,10 @@ Plug 'fatih/vim-go'
 " gruvbox material 
 Plug 'sainnhe/gruvbox-material'
 
+" vim-lsp
+Plug 'prabirshrestha/vim-lsp'
+
+" vim-lsp-settings
+Plug 'mattn/vim-lsp-settings'
+
 call plug#end()

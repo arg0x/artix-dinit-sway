@@ -75,10 +75,10 @@ let g:gruvbox_material_background = 'hard'
 
 let g:gruvbox_material_foreground = 'original'
 
-" let g:gruvbox_material_disable_terminal_colors = 1
+let g:gruvbox_material_disable_terminal_colors = 1
 
 " Enable gruvbox-material transparency
-let g:gruvbox_material_transparent_background = 0
+let g:gruvbox_material_transparent_background = 1
 
 " Disable italic comments
 let g:gruvbox_material_disable_italic_comment = 0
@@ -87,8 +87,19 @@ let g:gruvbox_material_disable_italic_comment = 0
 let g:gruvbox_material_enable_bold = 1
 
 " Material style statusline
-let g:gruvbox_material_statusline_style = 'material' 
+"let g:gruvbox_material_statusline_style = 'original' 
 
 " Set colorscheme
 colorscheme gruvbox-material
 
+" autocomplete with lsp use -> ctrl+xo
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=number
+endfunction
+
+" load
+augroup lsp_install
+    au!
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
