@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-wpg -rs 'Asuka_Blue.png' 'Asuka_Blue.png'
+wpg -rs '/home/argo/.config/wpg/wallpapers/Neon_Umberlla.jpg' '/home/argo/.config/wpg/wallpapers/Neon_Umberlla.jpg'

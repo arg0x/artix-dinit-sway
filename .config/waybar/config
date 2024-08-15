@@ -37,7 +37,7 @@
   },
   "tray": {
     "icon-size": 18,
-    "spacing": 15
+    "spacing": 10
   },
   "clock": {
     "format": "{:%a %b %e   %I:%M:%S %p}",
@@ -66,11 +66,11 @@
   },
   "network": {
     "interval": 1,
-    "format-wifi": "|   {bandwidthDownBits}    {bandwidthUpBits} |    {essid} {signalStrength}%",
-    "format-ethernet": "|   {ipaddr}/{cidr} ",
-    "tooltip-format": "|   {ifname} via {gwaddr} ",
-    "format-linked": "|   {ifname} (No IP) ",
-    "format-disconnected": "| ⚠ Offline |",
+    "format-wifi": "|    {bandwidthDownBits}     {bandwidthUpBits} |    {essid} {signalStrength}%",
+    "format-ethernet": "|    {bandwidthDownBits}     {bandwidthUpBits} |    {ipaddr}/{cidr}",
+    "tooltip-format": "  {ifname} via {gwaddr}",
+    "format-linked": "  {ifname} (No IP)",
+    "format-disconnected": "| ⚠ Offline ",
     "format-alt": "| {ifname}: {ipaddr}/{cidr}"
   },
   "temperature": {
@@ -104,11 +104,11 @@
     ]
   },
   "pulseaudio": {
-    "format": "| {icon}  {volume}% {format_source}| ",
-    "format-bluetooth": "| {volume}%  {icon}  {format_source}|",
-    "format-bluetooth-muted": "|  {icon}  {format_source}|",
-    "format-muted": "|  {volume}% {format_source}| ",
-    "format-source": "   {volume}% ",
+    "format": "| {icon}   {volume}% {format_source}| ",
+    "format-bluetooth": "{volume}%  {icon}  {format_source}",
+    "format-bluetooth-muted": "  {icon}  {format_source}",
+    "format-muted": "|   {volume}% {format_source}| ",
+    "format-source": "    {volume}% ",
     "format-source-muted": "",
     "format-icons": {
       "headphone": "",
@@ -126,3 +126,15 @@
     "on-click": "pavucontrol"
   }
 }
+
+
+/*
+  "network": {
+    "format-wifi": "WIFI: {essid} ({signalStrength}%)",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+*/

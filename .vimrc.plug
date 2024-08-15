@@ -15,4 +15,10 @@ Plug 'prabirshrestha/vim-lsp'
 " vim-lsp-settings
 Plug 'mattn/vim-lsp-settings'
 
+" wpgtk.vim
+Plug 'deviantfero/wpgtk.vim'
+
 call plug#end()
+
+" Set colorscheme
+colorscheme wpgtk

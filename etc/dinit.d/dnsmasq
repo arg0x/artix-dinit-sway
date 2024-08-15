@@ -2,4 +2,5 @@ type            = process
 command         = /usr/bin/dnsmasq -k --enable-dbus -u dnsmasq -g dnsmasq
 smooth-recovery = true
 depends-on      = dbus
-depends-on      = network
+depends-on      = network.target
+before          = login.target

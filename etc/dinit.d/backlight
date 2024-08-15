@@ -2,4 +2,5 @@ type         = scripted
 command      = /usr/lib/dinit/backlight start
 stop-command = /usr/lib/dinit/backlight stop
 restart      = false
-after        = root-rw
+after        = local.target
+before       = login.target

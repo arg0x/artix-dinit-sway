@@ -1,0 +1,9 @@
+type               = process
+command            = /usr/lib/dinit/dbus-wait-for -s -f 4 -n net.connman.iwd /usr/lib/iwd/iwd
+smooth-recovery    = true
+logfile            = /var/log/dinit/iwd.log
+depends-on         = dbus
+depends-on         = early-devices.target
+depends-on         = pre-network.target
+before             = network.target
+ready-notification = pipefd:4

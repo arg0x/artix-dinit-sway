@@ -2,5 +2,5 @@ type            = process
 command         = /usr/bin/NetworkManager -n
 smooth-recovery = true
 depends-on      = dbus
-depends-on      = network-pre
-before          = network
+depends-on      = pre-network.target
+before          = network.target

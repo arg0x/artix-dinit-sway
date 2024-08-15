@@ -14,5 +14,7 @@ fi
 
 # cargo env
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-. "$HOME/.cargo/env"
 
+# Pipenv
+PIPENV_VENV_IN_PROJECT=true
+. "$HOME/.cargo/env"
