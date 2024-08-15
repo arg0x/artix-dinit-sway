@@ -74,3 +74,10 @@ for x in $(< .pkglist-aur); do yay -S $x; done
 
 - Run [screensh](./.local/bin/screensh)
 - Refer - <https://www.reddit.com/r/swaywm/comments/l4e55v/guide_how_to_screenshare_from_chromiumfirefox/>
+
+## Todo
+
+- [ ] Add greeter
+- [ ] Add Notification management
+- [ ] Make default gruvbox theme option
+- [ ] Fix bugs
